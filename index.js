@@ -1,8 +1,9 @@
 'use strict';
 
+exports = module.exports = cliWidth;
 exports.defaultWidth = 0;
 
-module.exports = function () {
+function cliWidth() {
   if (process.stdout.getWindowSize) {
     return process.stdout.getWindowSize()[0];
   }
