@@ -23,8 +23,8 @@ cliWidth(); // maybe 204 :)
 
 You can also set the `CLI_WIDTH` environment variable.
 
-If none of the methods are supported, the default is `0` and
-can be changed via `cliWidth.defaultWidth = 200;`.
+If none of the methods are supported, and the environment variable isn't set,
+the default is `0` and can be changed via `cliWidth.defaultWidth = 200;`.
 
 ## Tests
 
@@ -32,3 +32,5 @@ can be changed via `cliWidth.defaultWidth = 200;`.
 npm install
 npm test
 ```
+
+Coverage can be generated with `npm run coverage`.
