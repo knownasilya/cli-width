@@ -5,6 +5,7 @@ Get stdout window width, with three fallbacks, `tty`, a custom environment varia
 
 [![npm version](https://badge.fury.io/js/cli-width.svg)](http://badge.fury.io/js/cli-width)
 [![Build Status](https://travis-ci.org/knownasilya/cli-width.svg)](https://travis-ci.org/knownasilya/cli-width)
+[![Coverage Status](https://coveralls.io/repos/knownasilya/cli-width/badge.svg?branch=master&service=github)](https://coveralls.io/github/knownasilya/cli-width?branch=master)
 
 ## Usage
 
