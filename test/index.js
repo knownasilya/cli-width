@@ -15,6 +15,17 @@ test('uses process.stdout.getWindowSize', function (t) {
   t.end();
 });
 
+test('uses default if process.stdout.getWindowSize reports width of 0', function (t) {
+  lib.defaultWidth = 10;
+  process.stdout.getWindowSize = function () {
+    return [0];
+  };
+
+  t.equal(lib(), 10, 'equal to mocked, 10');
+  lib.defaultWidth = 0; // set default back to original value.
+  t.end();
+})
+
 test('uses tty.getWindowSize', function (t) {
   process.stdout.getWindowSize = undefined;
   tty.getWindowSize = function () {
@@ -24,6 +35,18 @@ test('uses tty.getWindowSize', function (t) {
   t.equal(lib(), 5, 'equal to mocked, 5');
   t.end();
 });
+
+test('uses default if tty.getWindowSize reports width of 0', function (t) {
+  lib.defaultWidth = 10;
+  process.stdout.getWindowSize = undefined;
+  tty.getWindowSize = function () {
+    return [0, 0];
+  };
+
+  t.equal(lib(), 10, 'equal to mocked, 10');
+  lib.defaultWidth = 0; // set default back to original value.
+  t.end();
+})
 
 test('uses custom env var', function (t) {
   tty.getWindowSize = undefined;
