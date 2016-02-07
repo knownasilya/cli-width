@@ -15,14 +15,12 @@ test('uses process.stdout.getWindowSize', function (t) {
   t.end();
 });
 
-test('uses default if process.stdout.getWindowSize reports width of 0', function (t) {
-  lib.defaultWidth = 10;
+test('uses defaultWidth if process.stdout.getWindowSize reports width of 0', function (t) {
   process.stdout.getWindowSize = function () {
     return [0];
   };
 
-  t.equal(lib(), 10, 'equal to mocked, 10');
-  lib.defaultWidth = 0; // set default back to original value.
+  t.equal(lib({ defaultWidth: 10 }), 10, 'equal to mocked, 10');
   t.end();
 })
 
@@ -37,14 +35,12 @@ test('uses tty.getWindowSize', function (t) {
 });
 
 test('uses default if tty.getWindowSize reports width of 0', function (t) {
-  lib.defaultWidth = 10;
   process.stdout.getWindowSize = undefined;
   tty.getWindowSize = function () {
     return [0, 0];
   };
 
-  t.equal(lib(), 10, 'equal to mocked, 10');
-  lib.defaultWidth = 0; // set default back to original value.
+  t.equal(lib({ defaultWidth: 10 }), 10, 'equal to mocked, 10');
   t.end();
 })
 
@@ -75,8 +71,26 @@ test('uses default', function (t) {
 });
 
 test('uses overridden default', function (t) {
-  lib.defaultWidth = 10;
+  t.equal(lib({ defaultWidth: 10 }), 10, 'user-set defaultWidth value, 10');
+  t.end();
+});
 
-  t.equal(lib(), 10, 'user-set default value, 10');
+test('uses user-configured output stream', function (t) {
+  var outputMock = {
+      getWindowSize: function () {
+          return [10];
+      }
+  };
+  t.equal(lib({ output: outputMock }), 10, 'user-set output stream, 10');
+  t.end();
+});
+
+test('uses user-configured tty', function (t) {
+  var ttyMock = {
+      getWindowSize: function () {
+          return [2, 5];
+      }
+  };
+  t.equal(lib({ tty: ttyMock }), 5, 'user-set tty, 5');
   t.end();
 });
