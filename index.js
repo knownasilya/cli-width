@@ -1,17 +1,33 @@
 'use strict';
 
 exports = module.exports = cliWidth;
-exports.defaultWidth = 0;
 
-function cliWidth() {
-  if (process.stdout.getWindowSize) {
-    return process.stdout.getWindowSize()[0] || exports.defaultWidth;
+function normalizeOpts(options) {
+  var defaultOpts = {
+    defaultWidth: 0,
+    output: process.stdout,
+    tty: require('tty')
+  };
+  if (!options) {
+    return defaultOpts;
+  } else {
+    Object.keys(defaultOpts).forEach(function (key) {
+      if (!options[key]) {
+        options[key] = defaultOpts[key];
+      }
+    });
+    return options;
+  }
+}
+
+function cliWidth(options) {
+  var opts = normalizeOpts(options);
+  if (opts.output.getWindowSize) {
+    return opts.output.getWindowSize()[0] || opts.defaultWidth;
   }
   else {
-    var tty = require('tty');
-
-    if (tty.getWindowSize) {
-      return tty.getWindowSize()[1] || exports.defaultWidth;
+    if (opts.tty.getWindowSize) {
+      return opts.tty.getWindowSize()[1] || opts.defaultWidth;
     }
     else {
       if (process.env.CLI_WIDTH) {
@@ -22,7 +38,7 @@ function cliWidth() {
         }
       }
 
-      return exports.defaultWidth;
+      return opts.defaultWidth;
     }
   }
 };
