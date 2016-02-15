@@ -30,11 +30,16 @@ function cliWidth(options) {
       return opts.tty.getWindowSize()[1] || opts.defaultWidth;
     }
     else {
-      if (process.env.CLI_WIDTH) {
-        var width = parseInt(process.env.CLI_WIDTH, 10);
+      if (opts.output.columns) {
+        return opts.output.columns;
+      }
+      else {
+        if (process.env.CLI_WIDTH) {
+          var width = parseInt(process.env.CLI_WIDTH, 10);
 
-        if (!isNaN(width)) {
-          return width;
+          if (!isNaN(width)) {
+            return width;
+          }
         }
       }
 
