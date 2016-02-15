@@ -1,7 +1,7 @@
 cli-width
 =========
 
-Get stdout window width, with four fallbacks, `tty`, a custom environment variable and then a default.
+Get stdout window width, with four fallbacks, `tty`, `output.columns`, a custom environment variable and then a default.
 
 [![npm version](https://badge.fury.io/js/cli-width.svg)](http://badge.fury.io/js/cli-width)
 [![Build Status](https://travis-ci.org/knownasilya/cli-width.svg)](https://travis-ci.org/knownasilya/cli-width)
