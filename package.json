@@ -1,6 +1,6 @@
 {
   "name": "cli-width",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Get stdout window width, with two fallbacks, tty and then a default.",
   "main": "index.js",
   "scripts": {
