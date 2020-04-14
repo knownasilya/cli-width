@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "node test | tspec",
-    "coverage": "isparta cover test/*.js | tspec",
+    "coverage": "nyc node test | tspec",
     "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info",
-    "postcoveralls": "rimraf ./coverage",
     "release": "standard-version"
   },
   "repository": {
@@ -21,11 +20,10 @@
   },
   "homepage": "https://github.com/knownasilya/cli-width",
   "devDependencies": {
-    "coveralls": "^2.11.4",
-    "isparta": "^3.0.4",
-    "rimraf": "^2.4.3",
-    "standard-version": "^4.2.0",
-    "tap-spec": "^4.1.0",
-    "tape": "^3.4.0"
+    "coveralls": "^3.0.11",
+    "nyc": "^15.0.1",
+    "standard-version": "^7.1.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.13.2"
   }
 }
