@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git@github.com:knownasilya/cli-width.git"
   },
-  "author": "Ilya Radchenko <ilya@burstcreations.com>",
+  "author": "Ilya Radchenko <knownasilya@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/knownasilya/cli-width/issues"
