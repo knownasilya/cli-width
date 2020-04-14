@@ -1,5 +1,4 @@
-cli-width
-=========
+# cli-width
 
 Get stdout window width, with four fallbacks, `tty`, `output.columns`, a custom environment variable and then a default.
 
@@ -14,9 +13,9 @@ npm install --save cli-width
 ```
 
 ```js
-'use strict';
+"use strict";
 
-var cliWidth = require('cli-width');
+const cliWidth = require("cli-width");
 
 cliWidth(); // maybe 204 :)
 ```
@@ -36,29 +35,28 @@ the default width value is going to be `0`, that can be changed using the config
 - **output**\<object\> A stream to be used to read width values from, defaults to `process.stdout`
 - **tty**\<object\> TTY module to try to read width from as a fallback, defaults to `require('tty')`
 
-
 ### Examples
 
 Defining both a default width value and a stream output to try to read from:
 
 ```js
-var cliWidth = require('cli-width');
-var ttys = require('ttys');
+const cliWidth = require("cli-width");
+const ttys = require("ttys");
 
 cliWidth({
   defaultWidth: 80,
-  output: ttys.output
+  output: ttys.output,
 });
 ```
 
 Defines a different tty module to read width from:
 
 ```js
-var cliWidth = require('cli-width');
-var ttys = require('ttys');
+const cliWidth = require("cli-width");
+const ttys = require("ttys");
 
 cliWidth({
-  tty: ttys
+  tty: ttys,
 });
 ```
 
