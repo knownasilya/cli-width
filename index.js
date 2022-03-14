@@ -6,7 +6,7 @@ function normalizeOpts(options) {
   let defaultOpts = {
     defaultWidth: 0,
     output: process.stdout,
-    tty: require("tty"),
+    tty: require("tty-browserify"),
   };
 
   if (!options) {
