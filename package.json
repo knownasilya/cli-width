@@ -23,10 +23,10 @@
     "node": ">= 10"
   },
   "devDependencies": {
-    "coveralls": "^3.0.11",
-    "nyc": "^15.0.1",
-    "standard-version": "^8.0.1",
+    "coveralls": "^3.1.1",
+    "nyc": "^15.1.0",
+    "standard-version": "^9.3.2",
     "tap-spec": "^5.0.0",
-    "tape": "^4.13.2"
+    "tape": "^5.5.2"
   }
 }
