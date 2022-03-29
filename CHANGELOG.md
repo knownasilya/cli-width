@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/knownasilya/cli-width/compare/v3.0.0...v4.0.0) (2022-03-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop support for node < 12
+
+### Bug Fixes
+
+* drop support for node < 12 ([50fcd88](https://github.com/knownasilya/cli-width/commit/50fcd8850eb62465b5e1a06df9d5a9a07b6c965c))
+
 ## [3.0.0](https://github.com/knownasilya/cli-width/compare/v2.2.1...v3.0.0) (2020-04-14)
 
 
