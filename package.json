@@ -33,5 +33,5 @@
     "node": "12.22.11",
     "npm": "8.5.5"
   },
-  "files": ["index.js"]
+  "files": ["index.js", "index.d.ts"]
 }
