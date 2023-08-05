@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.0](https://github.com/knownasilya/cli-width/compare/v4.0.0...v4.1.0) (2023-08-05)
+
+
+### Features
+
+* ts types and test against node 18 and 20 ([bc2884f](https://github.com/knownasilya/cli-width/commit/bc2884f5346f5465715327970ebca1bfa4bfe807))
+
 ## [4.0.0](https://github.com/knownasilya/cli-width/compare/v3.0.0...v4.0.0) (2022-03-29)
 
 
