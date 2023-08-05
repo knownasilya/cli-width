@@ -3,7 +3,6 @@
 Get stdout window width, with four fallbacks, `tty`, `output.columns`, a custom environment variable and then a default.
 
 [![npm version](https://badge.fury.io/js/cli-width.svg)](http://badge.fury.io/js/cli-width)
-[![Build Status](https://travis-ci.org/knownasilya/cli-width.svg)](https://travis-ci.org/knownasilya/cli-width)
 [![Coverage Status](https://coveralls.io/repos/knownasilya/cli-width/badge.svg?branch=master&service=github)](https://coveralls.io/github/knownasilya/cli-width?branch=master)
 
 Tested against Node v12 to v20.
