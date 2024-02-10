@@ -2,7 +2,7 @@
 /// <reference types="node" />
 
 import { Stream } from 'stream';
-import tty = require('tty');
+import tty from 'node:tty';
 
 declare function cliWidth(options?: {
   defaultWidth?: number;
