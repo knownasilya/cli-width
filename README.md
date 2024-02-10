@@ -35,7 +35,7 @@ the default width value is going to be `0`, that can be changed using the config
 
 - **defaultWidth**\<number\> Defines a default value to be used if none of the methods are available, defaults to `0`
 - **output**\<object\> A stream to be used to read width values from, defaults to `process.stdout`
-- **tty**\<object\> TTY module to try to read width from as a fallback, defaults to `require('tty')`
+- **tty**\<object\> TTY module to try to read width from as a fallback, defaults to `import tty from 'node:tty'`
 
 Returns a `number`
 
