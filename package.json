@@ -2,11 +2,11 @@
   "name": "cli-width",
   "version": "4.1.0",
   "description": "Get stdout window width, with two fallbacks, tty and then a default.",
-  "main": "index.js",
+  "main": "index.mjs",
+  "types": "index.d.ts",
   "scripts": {
-    "test": "node test | tspec",
-    "coverage": "nyc node test | tspec",
-    "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
     "release": "standard-version"
   },
   "repository": {
@@ -20,21 +20,18 @@
   },
   "homepage": "https://github.com/knownasilya/cli-width",
   "engines": {
-    "node": ">= 12"
+    "node": ">= 18"
   },
   "devDependencies": {
-    "coveralls": "^3.1.1",
-    "nyc": "^15.1.0",
+    "@vitest/coverage-v8": "^1.2.2",
     "standard-version": "^9.3.2",
-    "tap-spec": "^5.0.0",
-    "tape": "^5.5.2"
+    "vitest": "^1.2.2"
   },
   "volta": {
-    "node": "12.22.11",
-    "npm": "8.5.5"
+    "node": "18.19.0"
   },
   "files": [
-    "index.js",
+    "index.mjs",
     "index.d.ts"
   ]
 }
