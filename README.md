@@ -47,7 +47,7 @@ Defining both a default width value and a stream output to try to read from:
 import cliWidth from 'cli-width';
 import ttys from 'ttys';
 
-cliWidth({
+const width = cliWidth({
   defaultWidth: 80,
   output: ttys.output,
 });
@@ -59,7 +59,7 @@ Defines a different tty module to read width from:
 import cliWidth from 'cli-width';
 import ttys from 'ttys';
 
-cliWidth({
+const width = cliWidth({
   tty: ttys,
 });
 ```
