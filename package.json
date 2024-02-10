@@ -5,9 +5,7 @@
   "main": "index.mjs",
   "types": "index.d.ts",
   "scripts": {
-    "test": "node test/index.mjs | tspec",
-    "coverage": "nyc node test/index.mjs | tspec",
-    "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info",
+    "test": "vitest",
     "release": "standard-version"
   },
   "repository": {
@@ -24,17 +22,14 @@
     "node": ">= 18"
   },
   "devDependencies": {
-    "coveralls": "^3.1.1",
-    "nyc": "^15.1.0",
     "standard-version": "^9.3.2",
-    "tap-spec": "^5.0.0",
-    "tape": "^5.7.4"
+    "vitest": "^1.2.2"
   },
   "volta": {
     "node": "18.19.0"
   },
   "files": [
-    "index.js",
+    "index.mjs",
     "index.d.ts"
   ]
 }

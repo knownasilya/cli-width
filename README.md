@@ -70,5 +70,3 @@ cliWidth({
 npm install
 npm test
 ```
-
-Coverage can be generated with `npm run coverage`.
