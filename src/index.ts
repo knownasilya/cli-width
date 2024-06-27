@@ -1,6 +1,13 @@
 import tty from 'node:tty';
+import { type Stream } from 'stream';
 
-export default function cliWidth(options) {
+type Options = {
+  defaultWidth?: number;
+  output?: Stream | typeof process.stdout;
+  tty?: typeof tty;
+};
+
+export default function cliWidth(options?: Options): number | undefined {
   const opts = normalizeOpts(options);
 
   if (
@@ -19,8 +26,8 @@ export default function cliWidth(options) {
     return opts.tty.getWindowSize()[1] || opts.defaultWidth;
   }
 
-  if (opts.output.columns) {
-    return opts.output.columns;
+  if (opts.output && 'columns' in opts.output) {
+    return opts.output.columns as number;
   }
 
   if (process.env.CLI_WIDTH) {
@@ -34,8 +41,8 @@ export default function cliWidth(options) {
   return opts.defaultWidth;
 }
 
-function normalizeOpts(options) {
-  const defaultOpts = {
+function normalizeOpts(options?: Options) {
+  const defaultOpts: Options = {
     defaultWidth: 0,
     output: process.stdout,
     tty,
@@ -45,11 +52,10 @@ function normalizeOpts(options) {
     return defaultOpts;
   }
 
-  Object.keys(defaultOpts).forEach(function (key) {
-    if (!options[key]) {
-      options[key] = defaultOpts[key];
-    }
-  });
+  const optionsWithDefaults: Options = {
+    ...defaultOpts,
+    ...options,
+  };
 
-  return options;
+  return optionsWithDefaults;
 }

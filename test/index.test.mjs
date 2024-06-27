@@ -1,7 +1,7 @@
 import tty from 'node:tty';
 import { expect, test } from 'vitest';
 
-import lib from '../index.mjs';
+import lib from '../dist/esm';
 
 test('uses process.stdout.getWindowSize', function () {
   // mock stdout.getWindowSize

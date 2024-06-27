@@ -29,7 +29,7 @@ the default width value is going to be `0`, that can be changed using the config
 
 ## API
 
-### cliWidth([options]): number
+### cliWidth([options]): number|undefined
 
 `cliWidth` can be configured using an `options` parameter, the possible properties are:
 
@@ -37,7 +37,7 @@ the default width value is going to be `0`, that can be changed using the config
 - **output**\<object\> A stream to be used to read width values from, defaults to `process.stdout`
 - **tty**\<object\> TTY module to try to read width from as a fallback, defaults to `import tty from 'node:tty'`
 
-Returns a `number`
+Returns a `number|undefined`
 
 ### Examples
 
